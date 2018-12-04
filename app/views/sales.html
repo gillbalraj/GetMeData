@@ -1,0 +1,30 @@
+<h2>Sales Data</h2>
+<!-- set date filter -->
+Filter By: &nbsp;&nbsp;&nbsp; Date <input [matDatepicker] type="date" ng-model="salesFilter.TIME_DATE"/>  &nbsp;&nbsp;&nbsp; US State <input type="text" ng-model="salesFilter.STATE_PROV_CODE_ISO_3166_2"  value="Filter by States"/>
+<br /><br />
+<table class="table table-striped">
+    <tr>
+        <th ng-click="doSort('TIME_DATE')">DATE</th>
+        <th ng-click="doSort('STATE_PROV_CODE_ISO_3166_2')">US STATE</th>
+        <th ng-click="doSort('STORE_TYPE')">STORE TYPE</th>
+        <th ng-click="doSort('BRANDTYPE')">BRAND TYPE</th>
+        <th ng-click="doSort('BRAND')">BRAND</th>
+        <th ng-click="doSort('MODEL')">MODEL</th>
+        <th ng-click="doSort('QUANTITY_SOLD')">QUANTITY SOLD</th>
+        <th ng-click="doSort('REVENUE_US')">REVENUE</th>
+        <th>&nbsp;</th>
+    </tr>
+    <tr ng-repeat="sales in salesData | filter:salesFilter | filter:STATE_PROV_CODE_ISO_3166_2 | orderBy:sortBy:reverse" class="repeat-animation">
+        <td>{{ sales.TIME_DATE | date}}</td>
+        <td>{{ sales.STATE_PROV_CODE_ISO_3166_2 }}</td>
+        <td>{{ sales.STORE_TYPE }}</td>
+        <td>{{ sales.BRANDTYPE  }}</td>
+        <td>{{ sales.BRAND  }}</td>
+        <td>{{ sales.MODEL  }}</td>
+        <td>{{ sales.QUANTITY_SOLD  }}</td>
+        <td>{{ sales.REVENUE_US | currency  }}</td>
+    </tr>
+</table>
+<br />
+<!-- display total number of rows at bottom -->
+<span>Total salesData: {{ salesData.length }}</span>
