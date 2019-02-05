@@ -21,8 +21,6 @@ Step 2.  Run “npm install” in cmd to load the require packages. The importan
 Step 3.  Run “node server.js” from the cmd to connect to server.
 Step 4.  Go to the browser and open http://localhost:3000/#/  		
 
-If running into errors, please contact: balrajgill18@gmail.com or at 2269612087.
-
 
 How To: 
 
@@ -43,8 +41,8 @@ Setting up the SQL Server:
 •	Go to server roles and grant all necessary access especially sysadmin, serveradmin, public etc.  
 Please Note the default connection configuration att local host:
 Configurations = {   
-        user: "balraj",
-        password: "12345",
+        user: "**your userName**",
+        password: "**your password**",
         server: "localhost",
         database: "wf_retail"      
  };
