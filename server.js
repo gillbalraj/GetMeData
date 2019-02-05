@@ -5,8 +5,8 @@ const express = require('express'),
 app.use(express.static(__dirname));      
 // Create database connection
   const db = {   
-        user: "balraj",
-        password: "12345",
+        user: "**userName**",
+        password: "**your password**",
         server: "localhost",
         database: "wf_retail"      
  };
